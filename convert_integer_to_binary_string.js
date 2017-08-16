@@ -13,7 +13,7 @@ try {
 
 function integerDivision(dividend, divisor) {
   if (divisor === 0) {
-    throw new Error('Division by zero');
+    throw new Error('integerDivision() expects nonzero divisor');
   }
 
   let quotient = dividend / divisor;
