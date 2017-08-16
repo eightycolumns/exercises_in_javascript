@@ -26,6 +26,10 @@ function integerDivision(dividend, divisor) {
 }
 
 function toBinaryString(int) {
+  if (int < 0) {
+    throw new Error('toBinaryString() expects nonnegative integer');
+  }
+
   if (int === 0) {
     return '0';
   }
