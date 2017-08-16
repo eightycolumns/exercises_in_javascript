@@ -7,6 +7,16 @@ for (let i = 0; i < 256; i += 1) {
   );
 }
 
+function integerDivision(dividend, divisor) {
+  let quotient = dividend / divisor;
+
+  if (quotient < 0) {
+    return Math.ceil(quotient);
+  } else {
+    return Math.floor(quotient);
+  }
+}
+
 function toBinaryString(int) {
   if (int === 0) {
     return '0';
@@ -16,7 +26,7 @@ function toBinaryString(int) {
 
   while (int > 0) {
     binaryString = int % 2 + binaryString;
-    int = Math.floor(int / 2);
+    int = integerDivision(int, 2);
   }
 
   return binaryString;
