@@ -1,13 +1,21 @@
-for (let i = 0; i < 256; i += 1) {
-  let binaryString = toBinaryString(i);
+try {
+  for (let i = 0; i < 256; i += 1) {
+    let binaryString = toBinaryString(i);
 
-  console.log(
-    ' '.repeat(3 - i.toString().length) + i + '\t' +
-    ' '.repeat(8 - binaryString.length) + binaryString
-  );
+    console.log(
+      ' '.repeat(3 - i.toString().length) + i + '\t' +
+      ' '.repeat(8 - binaryString.length) + binaryString
+    );
+  }
+} catch (e) {
+  console.log('Error: ' + e.message);
 }
 
 function integerDivision(dividend, divisor) {
+  if (divisor === 0) {
+    throw new Error('Division by zero');
+  }
+
   let quotient = dividend / divisor;
 
   if (quotient < 0) {
